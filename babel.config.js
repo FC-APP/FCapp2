@@ -17,6 +17,7 @@ module.exports = {
           '@theme': './src/theme',
           '@utils': './src/utils',
           '@env': './src/env.js',
+          '@store': './src/store',
         },
       },
     ],
