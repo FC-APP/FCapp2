@@ -1,8 +1,8 @@
 import env from '@env';
-import axios from 'axios';
+import ky from 'ky';
 
-const ApiClient = axios.create({
-  baseURL: env.API_URL,
+const ApiClient = ky.create({
+  prefixUrl: env.API_URL,
   headers: {
     'Content-type': 'application/json',
   },
