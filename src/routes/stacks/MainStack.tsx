@@ -1,7 +1,7 @@
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import Homepage from '@scenes/Homepage';
-import UserDetails from '@scenes/UserDetails';
-import UsersList from '@scenes/UsersList';
+import Login from '@scenes/LoginPage';
+import Register from '@scenes/RegisterPage';
 import customTheme from '@theme';
 import { FC } from 'react';
 import * as React from 'react';
@@ -21,8 +21,8 @@ export const MainStackScreen: FC = () => {
         }}
       />
       <MainStack.Screen
-        name="UsersList"
-        component={UsersList}
+        name="Login"
+        component={Login}
         options={{
           headerShown: true,
           headerTitleAlign: 'center',
@@ -36,8 +36,8 @@ export const MainStackScreen: FC = () => {
         }}
       />
       <MainStack.Screen
-        name="UserDetails"
-        component={UserDetails}
+        name="Register"
+        component={Register}
         options={{
           headerShown: true,
           headerTitleAlign: 'center',

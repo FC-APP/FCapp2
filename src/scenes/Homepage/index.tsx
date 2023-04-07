@@ -10,21 +10,12 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const Home: FC = () => {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
   const navigation = useNavigation<GenericNavigationProps>();
   const { setOptions } = useNavigation<GenericNavigationProps>();
   const { mutate: createUser } = useCreateUser();
   const { mutate: modifyUser } = useModifyUser();
   const { mutate: deleteUser } = useDeleteUser();
-  const currentLocale = i18n.language;
-
-  const switchLocaleToEn = useCallback(() => {
-    i18n.changeLanguage('en');
-  }, [i18n]);
-
-  const switchLocaleToIt = useCallback(() => {
-    i18n.changeLanguage('it');
-  }, [i18n]);
 
   useLayoutEffect(() => {
     setOptions({
@@ -52,101 +43,56 @@ const Home: FC = () => {
           fontSize="3xl"
           paddingBottom="20px"
           textAlign="center">
-          {t('Homepage:welcome')}
-        </Text>
-        <Text
-          color="WHITE"
-          fontFamily="body"
-          fontWeight={400}
-          fontStyle="normal"
-          fontSize="sm"
-          paddingBottom="20px"
-          textAlign="center">
-          {t('Homepage:releasedWithLove')}
+          FC.app
         </Text>
 
-        <Flex flexDirection="row">
-          <Button
-            backgroundColor="CARROT"
-            onPress={switchLocaleToIt}
-            margin={2}
-            isPressed={currentLocale === 'it'}
-            _pressed={{
-              backgroundColor: currentLocale === 'it' ? 'primary' : 'tertiary',
-            }}>
+        <Button onPress={() => navigation.navigate('Main', { screen: 'Login' })} backgroundColor="SUN_FLOWER" mb="5px">
+          <Flex flexDirection="row" alignItems="center">
+            <Icon as={EvilIcons} name="arrow-right" color="WHITE" marginRight={2} fontSize={20} />
             <Text color="WHITE" fontFamily="body" fontStyle="normal">
-              {t('common:italian')}
+              {t('Homepage:loginIn')}
             </Text>
-          </Button>
+          </Flex>
+        </Button>
 
-          <Button
-            backgroundColor="CARROT"
-            onPress={switchLocaleToEn}
-            margin={2}
-            isPressed={currentLocale === 'en'}
-            _pressed={{
-              backgroundColor: currentLocale === 'en' ? 'primary' : 'tertiary',
-            }}>
+        <Button onPress={() => navigation.navigate('Main', { screen: 'Login' })} backgroundColor="SUN_FLOWER" mb="5px">
+          <Flex flexDirection="row" alignItems="center">
+            <Icon as={EvilIcons} name="arrow-right" color="WHITE" marginRight={2} fontSize={20} />
             <Text color="WHITE" fontFamily="body" fontStyle="normal">
-              {t('common:english')}
+              {t('Homepage:googleLogin')}
             </Text>
-          </Button>
-        </Flex>
+          </Flex>
+        </Button>
+
+        <Button onPress={() => navigation.navigate('Main', { screen: 'Login' })} backgroundColor="SUN_FLOWER" mb="5px">
+          <Flex flexDirection="row" alignItems="center">
+            <Icon as={EvilIcons} name="arrow-right" color="WHITE" marginRight={2} fontSize={20} />
+            <Text color="WHITE" fontFamily="body" fontStyle="normal">
+              {t('Homepage:facebookLogin')}
+            </Text>
+          </Flex>
+        </Button>
+
+        <Button onPress={() => navigation.navigate('Main', { screen: 'Login' })} backgroundColor="SUN_FLOWER" mb="5px">
+          <Flex flexDirection="row" alignItems="center">
+            <Icon as={EvilIcons} name="arrow-right" color="WHITE" marginRight={2} fontSize={20} />
+            <Text color="WHITE" fontFamily="body" fontStyle="normal">
+              {t('Homepage:appleLogin')}
+            </Text>
+          </Flex>
+        </Button>
 
         <Button
-          onPress={() => navigation.navigate('Main', { screen: 'UsersList' })}
+          onPress={() => navigation.navigate('Main', { screen: 'Register' })}
           backgroundColor="SUN_FLOWER"
           mb="5px">
           <Flex flexDirection="row" alignItems="center">
             <Icon as={EvilIcons} name="arrow-right" color="WHITE" marginRight={2} fontSize={20} />
             <Text color="WHITE" fontFamily="body" fontStyle="normal">
-              {t('Homepage:gotoUsersList')}
+              {t('Homepage:emailSignUp')}
             </Text>
           </Flex>
         </Button>
-
-        <Button onPress={() => createUser({ name: 'John', job: 'some-title' })} backgroundColor="SUN_FLOWER" mb="5px">
-          <Flex flexDirection="row" alignItems="center">
-            <Icon as={EvilIcons} name="arrow-right" color="WHITE" marginRight={2} fontSize={20} />
-            <Text color="WHITE" fontFamily="body" fontStyle="normal">
-              {t('Homepage:createNewUser')}
-            </Text>
-          </Flex>
-        </Button>
-
-        <Button
-          onPress={() => modifyUser({ userId: '666', name: 'Jil', job: 'some-title-edited' })}
-          backgroundColor="SUN_FLOWER"
-          mb="5px">
-          <Flex flexDirection="row" alignItems="center">
-            <Icon as={EvilIcons} name="arrow-right" color="WHITE" marginRight={2} fontSize={20} />
-            <Text color="WHITE" fontFamily="body" fontStyle="normal">
-              {t('Homepage:ModifyUser')}
-            </Text>
-          </Flex>
-        </Button>
-
-        <Button onPress={() => deleteUser({ userId: '999' })} backgroundColor="SUN_FLOWER" mb="5px">
-          <Flex flexDirection="row" alignItems="center">
-            <Icon as={EvilIcons} name="arrow-right" color="WHITE" marginRight={2} fontSize={20} />
-            <Text color="WHITE" fontFamily="body" fontStyle="normal">
-              {t('Homepage:DeleteUser')}
-            </Text>
-          </Flex>
-        </Button>
-
-        <Button
-          alignSelf="center"
-          backgroundColor="TRANSPARENT"
-          borderColor="ALIZARIN"
-          borderWidth={1}
-          marginTop={15}
-          onPress={() => navigation.navigate('MyModal')}>
-          <Text color="WHITE" fontFamily="body" fontStyle="normal">
-            {t('Homepage:openModal')}
-          </Text>
-        </Button>
-
         <EnvInfoView />
       </ScrollView>
     </CSafeAreaView>

@@ -38,7 +38,8 @@
     "prettier-format:staged": "prettier --write \"./src/**/*.{js,jsx,ts,tsx}\"",
     "dependencies:checkCircular": "madge src/ --circular",
     "dependencies:graph": "madge src/ --circular --image deps-graph.svg",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "android:proxy": "adb reverse tcp:8081 tcp:8081"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.17.9",

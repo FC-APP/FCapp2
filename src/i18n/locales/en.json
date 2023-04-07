@@ -7,6 +7,13 @@
     "back": "Back"
   },
   "Homepage": {
+    "loginIn": "Log in",
+    "signIn": "Log in",
+    "googleLogin": "Log in with Google",
+    "facebookLogin": "Log in with Facebook",
+    "appleLogin": "Sign in with Apple",
+    "emailLogin": "Log in with email",
+    "emailSignUp": "Register with e-mail",
     "welcome": "Thank you for using the React Native Starter App\n😍 😘 🙏🏻",
     "releasedWithLove": "Created and released with ❤️ for you",
     "gotoUsersList": "Go to Users List",
@@ -24,5 +31,36 @@
   },
   "UserDetails": {
     "UserDetails": "User Details"
+  },
+  "Register": {
+
+  },
+  "Login": {
+    "loginIn": "Log in",
+    "signIn": "Log in",
+    "googleLogin": "Log in with Google",
+    "facebookLogin": "Log in with Facebook",
+    "appleLogin": "Sign in with Apple",
+    "emailLogin": "Log in with email",
+    "emailSignUp": "Register with e-mail",
+    "notAccount": "Not registered yet?",
+    "hasAccount": "Already registered?",
+    "signUp": "Register",
+    "email": "Email",
+    "password": "Password",
+    "fieldCantBeEmpty": "Field cannot be empty.",
+    "incorrectPasswordInput": "Incorrect password.",
+    "firstNameLimit": "Name has to be between 1 and 160 characters.",
+    "lastNameLimit": "Last name has to be between 1 and 160 characters.",
+    "incorrectEmail": "Incorrect email address",
+    "notRememberPassword": "I do not remember my password",
+    "confirmPassword": "Repeat password",
+    "confirmPasswordError": "This password is different.",
+    "passwordRequirements": "min 6 characters, including a number",
+    "sendAgain": "Send again",
+    "inactiveAccount": "Your account is inactive. Send activation email again.",
+    "registryInfo":
+      "Your account is registered and an activation email has been sent.",
+    "verifyEmailSendAgain": "An activation email has been sent."
   }
 }
